@@ -29,7 +29,7 @@ def check_sign_up(Login, Password):
 	img_account = ''
 	nickname 		= ''
 
-	service = webdriver.chrome.service.Service(executable_path="chromedriver/chromedriver.exe")
+	service = webdriver.chrome.service.Service(executable_path="chromedriver/chromedriver")
 	driver = webdriver.Chrome(service=service)
 	driver.get('https://steamcommunity.com/login/home/?goto=')
 
