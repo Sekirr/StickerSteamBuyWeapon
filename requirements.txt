@@ -4,3 +4,5 @@ selenium
 bs4
 requests
 Python-Multipart
+chromedriver-py
+selenium-firefox
