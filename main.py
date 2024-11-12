@@ -1,10 +1,9 @@
-from fastapi 										import FastAPI, Form, Cookie
-from fastapi.staticfiles 				import StaticFiles
-from fastapi.responses 					import FileResponse, RedirectResponse
+from fastapi 			import FastAPI, Form, Cookie
+from fastapi.staticfiles 	import StaticFiles
+from fastapi.responses 		import FileResponse, RedirectResponse
 import uvicorn
 import starlette.status as status
-import json
-import pickle
+
 
 # from db import *
 from parser import *
