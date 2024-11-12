@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/reg_auth.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="js/sign.js"></script>
+</head>
+<body>
+	<form action="postdata_sign_up" method="post">
+		<div class="container">
+			<span class="header">Sign up</span>
+			<div>
+				<input type="text" class="input_data" placeholder="login" name="Login">
+				<input type="password" class="input_data" placeholder="Password" name="Password">
+				
+				<button type="submit" class="btn_reg" value="SignUp">Sign up</button>
+				<a href="/sign_in"><button type="button" class="btn_auth" value="SignIn" id="btn_link">Sign in</button></a>
+			</div>
+			<a href="/" class="link_home"><span class="home">Home</span></a>
+		</div>
+	</form>
+</body>
+</html>
