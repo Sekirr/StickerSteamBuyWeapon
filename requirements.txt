@@ -2,5 +2,4 @@ fastapi
 uvicorn
 selenium
 bs4
-re
 requests
