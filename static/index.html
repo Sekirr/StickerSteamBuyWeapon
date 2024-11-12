@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Sale of weapons </title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			let cookie 	= document.cookie;
+			let src_img = '', nickname = '';
+
+			if (cookie.indexOf('img_account') != -1){
+				src_img 	= cookie.slice(cookie.indexOf('img_account=')+13,cookie.indexOf("; nick")-1 );
+			}
+			if (cookie.indexOf('nickname') != -1){
+				nickname 	= cookie.slice(cookie.indexOf('nickname=')+9, cookie.indexOf('; log'));
+			}
+
+			// if there are cookies
+			if ( src_img != '' && nickname != '' ) {
+				let parent = document.getElementById('check_reg');
+				parent.innerHTML = '<div style="width: 7%; border: 3px solid rgba(0, 0, 0, .35); border-radius: 10%; margin-right: 5%; float: right"><img src='+src_img+' style="margin-left: 5%; padding: 1%; width: 30%; border-radius: 50%;"><button style="border: none; background: transparent;" onclick="logout();"><img src="/static/open_door.png" style="width:2vw; margin-left: 1vw;"></button><span style="margin-left: 10%; font-size: 1.3vw;">'+nickname+'</span></div>';
+			}
+		});
+
+		function logout() {
+			document.cookie = 'img_account = ; Max-Age=-1';
+			document.cookie = 'login = ; Max-Age=-1';
+			document.cookie = 'nickname = ; Max-Age=-1';
+			document.cookie = 'password = ; Max-Age=-1';
+			document.cookie = 'steamID = ; Max-Age=-1';
+
+			location.reload();
+		}
+	</script>
+	<link rel='stylesheet' type='text/css' media='screen' href='/static/css/index.css'>
+</head>
+
+	<div class="backgrd_block">
+		<!-- /?login=true - для регистрации -->
+		<div id="check_reg"><a href="/sign_in"><button class="btn_auth">Sign In</button></a></div>
+		<div class="block_on_top_stickers">
+			<div class="filters">
+				<div class="stickers" id="dhw_13">
+					<div class="img_stick" style="background-image: url(//steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/dreamhack/dh_gologo2.328766af0b49fb5402aa0eac7591efc567e3eb8d.png)">&nbsp;</div>
+					<h4 class="head_filt">DHW'13</h4>
+					<button class="activate" id="normal"><span class='descr'>normal</span></button>
+					<button class="activate" id="foil"><span class='descr'>foil</span></button>
+				</div>
+
+				<div class="stickers" id="katowice_14">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYoLO3PxJzw-HHTjVN4NP4l4OIxaenZOLXxT9UuMcj2LmW9t-s21flrkVvNzihJIeSIQVtZ1rY8k_-n7nnTs-jPA)">&nbsp;</div>
+					<h4 class="head_filt">Katowice'14</h4>
+					<button class="activate" id="normal"><span class='descr'>normal</span></button>
+					<button class="activate" id="holo"><span class="descr">holo</span></button>
+					<button class="activate" id="foil"><span class='descr'>foil</span></button>
+				</div>
+
+				<div class="stickers" id="dh_14">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRZRFuCF7X5mNvWUlB4IQhUibakOQBlnfaYJm0Tv9jvw9iPwfGtYr2JkzkB6pcl2riRrdnxjlCw_EBsYGulco6LMlhpXK5KaFA)">&nbsp;</div>
+					<h4 class="head_filt">DH'14</h4>
+					<button class="activate" id="normal"><span class='descr'>normal</span></button>
+					<button class="activate" id="holo"><span class="descr">holo</span></button>
+					<button class="activate" id="foil"><span class='descr'>foil</span></button>
+					<button class="activate" id="gold"><span class="descr">gold</span></button>
+				</div>
+
+				<div class="stickers" id="cologne_14">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ6LApdt6msJRd52fLFcC595NO6m7-HluXzNvWFxToHsZR0jOjCoI732w3j80tqazumIYDDJgY7YF-BqVm_lOfohcO6ot2Xngh5OFfi)">&nbsp;</div>
+					<h4 class="head_filt">Cologne'14</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+				</div>
+				
+				<div class="stickers" id="katowice_15">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYX0DbRvCiwMbQVg8kdFEYsLSkPw5j7PvHfTIMtYnultPdwaegMOuFzj5TsJx1jOjD8Nuk2g3grUNoMWv2ddLEdVRsZUaQpAYhw5Jmxw)">&nbsp;</div>
+					<h4 class="head_filt">Katowice'15</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+					<button class="activate"><span class="descr">gold</span></button>
+				</div>
+
+				<div class="stickers" id="cologne_15">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBhJyKwVDv7maLQhp373OKG8Vvd6yxNDZlvXxYuuAzjtT7MF1ibCW94rz0Fbm_xE6Ymj2IYSUbEZgNsIGrrDR)">&nbsp;</div>
+					<h4 class="head_filt">Cologne'15</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+					<button class="activate"><span class="descr">gold</span></button>
+				</div>
+
+				<div class="stickers" id="cluj_2015">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQFnaFbT8goDdRWJyKg1b-OPyelEy0KafdWkU6tnmkIbclK_3a-qHz20F7ZUm276Tp9nw3wexqkRyIzekWd3TlLI)">&nbsp;</div>
+					<h4 class="head_filt">Cluj 2015</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+				</div>
+				
+				<div class="stickers" id="mlg_16">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DFSua4xJ2DAgs7KRFav4WtJAtvnaebKDkTvo_nzIaIkaWjauOHkzMHsJVwiOrA992l0AfgqEI6Y2qgJoOLMlhpR7x7gsA)">&nbsp;</div>
+					<h4 class="head_filt">MLG'16</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+				</div>
+
+				<div class="stickers" id="cologne_16">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBRJnLjtfubaqFAthwfTNP2QUutqwloSJlKX1MLmGkzkA68Mii7qX9Nzz31birkVpZm6id4DGIw4gIQaH6LNCc2g)">&nbsp;</div>
+					<h4 class="head_filt">Cologne'16</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+					<button class="activate"><span class="descr">gold</span></button>
+				</div>
+
+				<div class="stickers" id="eleague_17">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRcWEDRSfCshZ-CBBJ1NhBFibKqJwhf3_LadjgMvd3nx9KNlqP2Yu2Fk2oHu8Mn3brErdyg3lLirRY6ZzjzdoKdIQ9oaUaQpAZor_Q1hQ)">&nbsp;</div>
+					<h4 class="head_filt">Eleague'17</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+				</div>
+
+				<div class="stickers" id="pgl_17">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRWXk3bSPP_h56EHFp1KAZovrWpJElj0aSddzkTuYTkzIbax_OiMuuCkG0Bv5Z00uiSrY2i0APi8xc5NmvwOsbLJVmAghDO)">&nbsp;</div>
+					<h4 class="head_filt">PGL'17</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+					<button class="activate"><span class="descr">gold</span></button>
+				</div>
+				
+				<div class="stickers" id="eleague_18">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfQ1_ESOr_h56LHF4tGgxYurXrLl4xiqPMKGhBtImwxoLek6XwMrmExDkG7MR32-uZ8N-ii1a28kc9NXezetFElLq3PQ)">&nbsp;</div>
+					<h4 class="head_filt">Eleague'18</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+				</div>
+
+				<div class="stickers" id="london_18">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRRQ0LUSOr_h56LHFxnMRZovrWpJElmg6SfKTgbvtqwwYWNlPGjZ7-GwTgI7ZAl0rqUrI6n0Qa1-Bc5MTynOsbLJRRhgSPb)">&nbsp;</div>
+					<h4 class="head_filt">London'18</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+				</div>
+
+				<div class="stickers" id="kato_19">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRWTVjfUO2u0p2DAgQ7JBdDpIWtJAtvnabLcD8au47kx9WJwa_yNuOBl28AsJQn3r2Rp4r23VXj80s9ZWv7LYKLMlhpGHQDeFc)">&nbsp;</div>
+					<h4 class="head_filt">Kato'19</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+				</div>
+				
+				<div class="stickers" id="berlin_19">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV7cTur_h56KHE9xKztfubaqZVVj1_aeIDgRvI21xdSNlvP3ZurXlz5Qu5Qp2eqQoN6migbg8hdoZj3tZNjCAd6VJXA)">&nbsp;</div>
+					<h4 class="head_filt">Berlin'19</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+				</div>
+
+				<div class="stickers" id="rmr_20">
+					<div class="img_stick" style="background-image: url(//community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPQV6CF7b9mM7AR086dlEBt-L3KFA20PefJW4RtN7ix9SJx6TwZ-KIkmhQvZR1i7CYrIr3ihqkpRSgwItR7A)">&nbsp;</div>
+					<h4 class="head_filt">RMR20</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+					<button class="activate"><span class="descr">gold</span></button>
+				</div>
+
+				<div class="stickers" id="sh_21">
+					<div class="img_stick" style="background-image: url(//community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEPTTOz_h52CHFN1Mw1ovrWpJEk4gqDJIG4RuY2ykdmKzqbxZe_Xw20Cu5YhiOuZpY-gigTl_UE4MG6gOsbLJapyRohN)">&nbsp;</div>
+					<h4 class="head_filt">SH'21</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+					<button class="activate"><span class="descr">gold</span></button>
+				</div>		
+
+				<div class="stickers" id="aw_22">
+					<div class="img_stick" style="background-image: url(//community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRcQljHQva9hZ-BARJyJB5SibKqJwgui6TLcD4V7Y_nkdndwPWkY-qJxTIEuJ0hjr3AoI6k2A2y_EZkZm-hIZjVLFEkexDCMA)">&nbsp;</div>
+					<h4 class="head_filt">AW'22</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+					<button class="activate"><span class="descr">gold</span></button>
+				</div>
+
+				<div class="stickers" id="rio_22">
+					<div class="img_stick" style="background-image: url(//community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPRUOCF7b_mMDGR2J8KghYibakOQBlnafLcmxGutqwzYSKw6X2N-PSkDwB7p0j3e2Z9o_z3wLl-EE9MWunJdeLMlhp-sNq6Tw)">&nbsp;</div>
+					<h4 class="head_filt">Rio'22</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+					<button class="activate"><span class="descr">gold</span></button>
+				</div>
+				
+				<div class="stickers" id="paris_23">
+					<div class="img_stick" style="background-image: url(//community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNTV7ZVLb9hZycVE91PDtQurOxPwJynaGdIzgT6o-1loPbxqGtZL_Twz5UuZIijL-TotjxilW38hZpazj2JYKLMlhpEN69hCQ)">&nbsp;</div>
+					<h4 class="head_filt">Paris'23</h4>
+					<button class="activate" id="normal"><span class='descr'>normal</span></button>
+					<button class="activate" id="holo"><span class="descr">holo</span></button>
+					<button class="activate" id="glitter"><span class='descr'>glitter</span></button>
+					<button class="activate" id="gold"><span class="descr">gold</span></button>
+				</div>
+
+				<div class="stickers" id="misc">
+					<div class="img_stick" style="background-image: url(//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ8KhNbv7SiFANhxP2GcG5EvYmzzYXSz_TwMerQwj8HupAkj-3D99rwjQGwqhdlZjryJobDJhh-Pw8Cxs9Ybw)">&nbsp;</div>
+					<h4 class="head_filt">Misc</h4>
+					<button class="activate"><span class='descr'>normal</span></button>
+					<button class="activate"><span class="descr">holo</span></button>
+					<button class="activate"><span class='descr'>foil</span></button>
+					<button class="activate"><span class="descr">gold</span></button>
+				</div>
+			</div>
+			<!-- sticker images are added here -->
+			<div class="filt_stickers">			
+			</div>	
+		</div>
+
+	<form action="postdata_start" method="post">
+		<div>		
+			<div style="width: 100%;">
+				<div class="filters_stickers">
+					<span class="wear_span">Wear:</span>
+					<div class="wear_div" >
+						<input type="checkbox" class="checkbox_wear" name="FN"><label class="fake_chb">
+						</label>
+						<span class="checkbox_wear_span">FN</span>
+					</div>
+					<div class="wear_div">
+						<input type="checkbox" class="checkbox_wear" name="MW"><label class="fake_chb"></label>
+						<span class="checkbox_wear_span">MW</span>
+					</div>
+					<div class="wear_div">
+						<input type="checkbox" class="checkbox_wear" name="FT"><label class="fake_chb"></label>
+						<span class="checkbox_wear_span">FT</span>
+					</div>
+					<div class="wear_div">
+						<input type="checkbox" class="checkbox_wear" name="WW"><label class="fake_chb"></label>
+						<span class="checkbox_wear_span">WW</span>
+					</div>
+					<div class="wear_div">
+						<input type="checkbox" class="checkbox_wear" name="BS"><label class="fake_chb"></label>
+						<span class="checkbox_wear_span">BS</span>
+					</div>
+				</div>
+				
+				<div class="cont_any_weapon">
+					<select class="any_weapon" name="select_weapon">
+						<option>Any weapon</option>
+						<option class="feature" disabled>--------------------------</option>
+						<option class="weapon" value="AWP">AWP</option>
+						<option class="weapon" value="SSG 08 (Scout)">SSG 08 (Scout)</option>
+						<option class="weapon" value="G3SG1">G3SG1</option>
+						<option class="weapon" value="SCAR-20">SCAR-20</option>
+						<option class="feature" disabled>--------------------------</option>
+						<option class="weapon" value="AK-47">AK-47</option>
+						<option class="weapon" value="AUG">AUG</option>
+						<option class="weapon" value="FAMAS">FAMAS</option>
+						<option class="weapon" value="Galil AR">Galil AR</option>
+						<option class="weapon" value="M4A1-S">M4A1-S</option>
+						<option class="weapon" value="M4A4">M4A4</option>
+						<option class="weapon" value="SG 553">SG 553</option>
+						<option class="feature" disabled>--------------------------</option>
+						<option class="weapon" value="CZ75-Auto">CZ75-Auto</option>
+						<option class="weapon" value="Desert Eagle">Desert Eagle</option>
+						<option class="weapon" value="Dual Beretta">Dual Beretta</option>
+						<option class="weapon" value="Five-Seven">Five-Seven</option>
+						<option class="weapon" value="Glock-18">Glock-18</option>
+						<option class="weapon" value="P2000">P2000</option>
+						<option class="weapon" value="P250">P250</option>
+						<option class="weapon" value="R8 Revolver">R8 Revolver</option>
+						<option class="weapon" value="Tec-9">Tec-9</option>
+						<option class="weapon" value="USP-S">USP-S</option>
+						<option class="feature" disabled>--------------------------</option>
+						<option class="weapon" value="M249">M249</option>
+						<option class="weapon" value="MAG-7">MAG-7</option>
+						<option class="weapon" value="Negev">Negev</option>
+						<option class="weapon" value="Nova">Nova</option>
+						<option class="weapon" value="Sawed-off">Sawed-off</option>
+						<option class="weapon" value="XM1014">XM1014</option>
+						<option class="feature" disabled>--------------------------</option>
+						<option class="weapon" value="MAC-10">MAC-10</option>
+						<option class="weapon" value="MP7">MP7</option>
+						<option class="weapon" value="MP9">MP9</option>
+						<option class="weapon" value="P90">P90</option>
+						<option class="weapon" value="PP-Bizon">PP-Bizon</option>
+						<option class="weapon" value="UMP-45">UMP-45</option>
+					</select>
+				</div>
+						
+				<div class="cont_any_type">
+					<select class="any_type" name="select_type">
+						<option>Any type</option>
+						<option class="feature" disabled>--------------------------</option>
+						<option class="StatTrak" value="StatTrak">StatTrak</option>
+						<option class="Souvenir" value="Souvenir">Souvenir</option>
+					</select>
+				</div>
+			</div>
+			
+			<button class="start_btn" onclick="submit_def();" type="submit">Start</button>
+		</div>
+		<div>
+			<div class="wrapper">
+				<div class="price-input">
+					<div class="field">
+						<span>Min</span>
+						<input type="number" class="input-min input_min" value="0" name="min_balance">
+					</div>
+					<div class="field">
+						<span>Max</span>
+						<input type="number" class="input-max" value="500" name="max_balance">
+					</div>
+				</div>
+			</div>
+
+			<div class="div_balance">
+				<span>Balance</span>
+				<input type="number" value="500"  name="balance">
+			</div>
+
+			<div class="div_select_stickers">
+				<div class="select_stickers" style="border-color:transparent">
+					<div class="black_stick"></div>
+				</div>
+				<div class="select_stickers">
+					<div class="black_stick"></div>
+				</div>
+				<div class="select_stickers">
+					<div class="black_stick"></div>
+				</div>
+				<div class="select_stickers">
+					<div class="black_stick"></div>
+				</div>
+			</div>
+			<div style="height: 100%;"><button class="clear_search" onclick="ClearSearch();" type="button">Clear search</button></div>
+		</div>
+	</form>
+</body>
+<script src='/static/js/index.js'></script>
+</html>

@@ -1,0 +1,88 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(70deg, #9c631c, #981f48, #48466d);
+}
+
+.container {
+	margin-top: 10%;
+	padding: 3%;
+	padding-bottom: 7%;
+	width: 15%;
+	margin-left: 40%;
+	border: 1px solid #351429;
+	border-radius: 5%;
+}
+.header {
+	font-size: 2vw;
+	font-weight: bold;
+	color: rgb(20, 18, 18);
+	font-family: "Google Sans", Roboto, Arial, sans-serif;
+	display: block;
+	margin-bottom: 20%;
+	margin-left: 25%;
+}
+.input_data {
+	margin-left: 18%;
+	padding-left: 5%;
+	display: block;
+	margin-bottom: 5%;
+	border: 1px solid rgb(180, 175, 175);
+	border-radius: 5px;
+	height: 2vw;
+	width: 60%;
+	transition: .25s ease-in-out;
+}
+.input_data:focus {
+	border: 1px solid rgb(20, 18, 18);
+	outline: none;
+	transform: scale(1.1);
+}
+.btn_reg {
+	display: inline-block;
+	border-color: transparent;
+	background-color: transparent;
+	font-size: 1.3vw;
+	margin-left: 10%;
+	margin-top: 10%;
+	transition: all .5s;
+	font-family: "Google Sans", Roboto, Arial, sans-serif
+}
+.btn_reg:hover {
+	margin-left: 5.5%;
+	letter-spacing: .1vw;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+}
+
+.home {
+	display: inline-block;
+	border-color: transparent;
+	background-color: transparent;
+	font-size: 1.3vw;
+	margin-left: 10%;
+	margin-top: 10%;
+	transition: all .5s;
+	font-family: "Google Sans", Roboto, Arial, sans-serif
+}
+.home:hover {
+	margin-left: 5.5%;
+	letter-spacing: .1vw;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+}
+.link_home {
+	text-decoration: none;
+	color: rgb(20, 18, 18);
+	font-family: "Google Sans", Roboto, Arial, sans-serif;
+}
+.link_home:visited {
+	color: rgb(20, 18, 18);
+}
+.link_home:hover {
+	color: rgb(20, 18, 18);
+}
