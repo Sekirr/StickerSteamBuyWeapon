@@ -1,19 +1,18 @@
-from selenium 																import webdriver
-from selenium.webdriver.common.keys 					import Keys
-from selenium.webdriver.common.by							import By
-from selenium.webdriver.support.ui 						import Select
-from selenium.common.exceptions 							import NoSuchElementException
-from selenium.webdriver.chrome.options 				import Options
+from selenium 					import webdriver
+from selenium.webdriver.common.keys 		import Keys
+from selenium.webdriver.common.by		import By
+from selenium.webdriver.support.ui 		import Select
+from selenium.common.exceptions 		import NoSuchElementException
+from selenium.webdriver.chrome.options 		import Options
 from selenium.webdriver.common.action_chains 	import ActionChains
-from selenium.common.exceptions 							import InvalidSessionIdException
-from bs4 																			import BeautifulSoup
-import undetected_chromedriver as uc
-import asyncio
+from selenium.common.exceptions 		import InvalidSessionIdException
+from bs4 					import BeautifulSoup
+
 import time
 import re
 import requests
-import pickle
-import json
+
+
 
 
 
