@@ -3,3 +3,4 @@ uvicorn
 selenium
 bs4
 requests
+Python-Multipart
