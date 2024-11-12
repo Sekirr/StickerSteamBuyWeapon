@@ -30,7 +30,7 @@ def check_sign_up(Login, Password):
 	nickname 		= ''
 
 
-	driver = webdriver.Chrome("chromedriver/chromedriver.exe")
+	driver = webdriver.Chrome(executable_path="chromedriver/chromedriver.exe")
 	driver.get('https://steamcommunity.com/login/home/?goto=')
 
 	time.sleep(2)
@@ -112,7 +112,7 @@ def user_steam(Login, Password, stick_1, stick_2, stick_3, stick_4, FN, MW, FT, 
 	buy_price = 0
 	f 				= open('result.txt', 'w')
 
-	driver 		= webdriver.Firefox('geckodriver.exe')
+	driver 		= webdriver.Firefox(executable_path='geckodriver.exe')
 	action 		= ActionChains(driver)
 
 	balance_remainder = balance_total
