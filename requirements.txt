@@ -2,3 +2,6 @@ fastapi
 uvicorn
 selenium
 bs4
+time
+re
+requests
