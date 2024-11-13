@@ -6,6 +6,13 @@ from selenium.common.exceptions 		import NoSuchElementException
 from selenium.webdriver.chrome.options 		import Options
 from selenium.webdriver.common.action_chains 	import ActionChains
 from selenium.common.exceptions 		import InvalidSessionIdException
+
+from selenium.webdriver.chrome.service 		import Service as ChromeService
+from selenium.webdriver.firefox.service 	import Service as FirefoxService
+
+from webdriver_manager.chrome  			import ChromeDriverManager
+from webdriver_manager.firefox 			import GeckoDriverManager
+
 from bs4 					import BeautifulSoup
 
 import time
@@ -29,8 +36,7 @@ def check_sign_up(Login, Password):
 	img_account = ''
 	nickname 		= ''
 
-	service = webdriver.chrome.service.Service(executable_path="chromedriver/chromedriver")
-	driver = webdriver.Chrome(service=service)
+	driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 	driver.get('https://steamcommunity.com/login/home/?goto=')
 
 	time.sleep(2)
@@ -112,8 +118,7 @@ def user_steam(Login, Password, stick_1, stick_2, stick_3, stick_4, FN, MW, FT, 
 	buy_price = 0
 	f 				= open('result.txt', 'w')
 
-	service		= webdriver.firefox.service.Service(executable_path='geckodriver.exe')
-	driver 		= webdriver.Firefox(service=service)
+	driver 		= webdriver.Firefox(service=ChromeService(GeckoDriverManager().install()))
 	action 		= ActionChains(driver)
 
 	balance_remainder = balance_total
