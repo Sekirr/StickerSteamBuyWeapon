@@ -19,7 +19,7 @@ import time
 import re
 import requests
 
-
+from chromedriver_py import binary_path
 
 
 
@@ -36,8 +36,9 @@ def check_sign_up(Login, Password):
 	img_account = ''
 	nickname 		= ''
 
+	svc = webdriver.ChromeService(executable_path=binary_path)
 	# driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-	driver = webdriver.Chrome()
+	driver = webdriver.Chrome(service=svc)
 	driver.get('https://steamcommunity.com/login/home/?goto=')
 
 	time.sleep(2)
